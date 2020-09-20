@@ -7,7 +7,7 @@ const Render = Matter.Render;
 var engine,world;
 var umbrella;
 var drops = [];
-var maxDrops = 90;
+var maxDrops = 70;
 var thunder1,thunder2,thunder3, thunder, thund;
 
 function preload(){

@@ -5,9 +5,8 @@ const Body = Matter.Body;
 const Render = Matter.Render;
 
 var engine,world;
-var umbrella;
 var drops = [];
-var maxDrops = 70;
+var maxDrops = 50;
 var thunder1,thunder2,thunder3, thunder, thund;
 
 function preload(){
@@ -21,7 +20,7 @@ function setup(){
    engine = Engine.create();
    world  = engine.world;
     
-   umbrella = new Umbrella();
+   umbrella = new Umbrella(100,280,140,140);
 
    if(frameCount%100===0){
         for(var i=0; i<maxDrops; i++){
@@ -55,11 +54,14 @@ function draw(){
         thunder.destroy();
     }
 
-
     for(var i=0; i<maxDrops;i++){
         drops[i].display();
         drops[i].update();
       }
+
+      textSize(15);
+      fill("red");
+      text("How Batman Started",300,400);
 
     drawSprites();    
 }
